@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:app/common/widgets/appbar/appbar.dart';
+import 'package:app/common/widgets/appbar/tabbar.dart';
+import 'package:app/common/widgets/brands/brand_card.dart';
+import 'package:app/common/widgets/brands/brand_show_case.dart';
 import 'package:app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:app/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:app/common/widgets/images/t_circular_image.dart';
@@ -13,6 +16,7 @@ import 'package:app/util/constans/enums.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
+import 'package:app/views/store/components/category_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:iconsax/iconsax.dart';
@@ -30,125 +34,94 @@ class StoreView extends StatelessWidget {
     return ChangeNotifierProvider<StoreModel>(
       create: (context) => StoreModel.instance(),
       child: Consumer<StoreModel>(builder: (context, viewModel, child) {
-        return Scaffold(
-          appBar: TAppBar(
-            title: Text('Store'),
-            actions: [
-              TCartCounterIcon(
-                iconColor: Colors.black,
-                onPressed: () {},
-              ),
-            ],
-          ),
-          body: NestedScrollView(
-            headerSliverBuilder: (_, innerBoxIsScrolled) {
-              return [
-                SliverAppBar(
-                  automaticallyImplyLeading: false,
-                  pinned: true,
-                  floating: true,
-                  backgroundColor: THelperFunctions.isDarkMode(context)
-                      ? TColors.black
-                      : TColors.white,
-                  expandedHeight: 440,
-                  flexibleSpace: Padding(
-                    padding: EdgeInsets.all(TSizes.defaultSpace),
-                    child: ListView(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      children: [
-                        // Search Bar
-                        SizedBox(
-                          height: TSizes.spaceBtwItems,
-                        ),
-                        TSearchContainer(
-                            text: "Search for products",
-                            showBorder: true,
-                            showBackground: true,
-                            padding: EdgeInsets.zero),
-                        SizedBox(
-                          height: TSizes.spaceBtwSections,
-                        ),
+        return DefaultTabController(
+          length: 4,
+          child: Scaffold(
+            appBar: TAppBar(
+              title: const Text('Store'),
+              actions: [
+                TCartCounterIcon(
+                  iconColor: Colors.black,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            body: NestedScrollView(
+              headerSliverBuilder: (_, innerBoxIsScrolled) {
+                return [
+                  SliverAppBar(
+                    automaticallyImplyLeading: false,
+                    pinned: true,
+                    floating: true,
+                    backgroundColor: THelperFunctions.isDarkMode(context)
+                        ? TColors.black
+                        : TColors.white,
+                    expandedHeight: 440,
+                    flexibleSpace: Padding(
+                      padding: const EdgeInsets.all(TSizes.defaultSpace),
+                      child: ListView(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          // Search Bar
+                          const SizedBox(
+                            height: TSizes.spaceBtwItems,
+                          ),
+                          const TSearchContainer(
+                              text: "Search for products",
+                              showBorder: true,
+                              showBackground: true,
+                              padding: EdgeInsets.zero),
+                          const SizedBox(
+                            height: TSizes.spaceBtwSections,
+                          ),
 
-                        //featured brand
-                        TSectionHeading(
-                          title: 'Featured Brands',
-                          showActionButton: true,
-                          onPressed: () {},
-                        ),
-                        SizedBox(
-                          height: TSizes.spaceBtwSections / 1.5,
-                        ),
-                        //
-                        TGidLayout(
-                            itemCount: 4,
-                            mainAxisExtent: 80,
-                            itemBuilder: (_, index) {
-                              return GestureDetector(
-                                onTap: () {},
-                                child: TRoundedContainer(
-                                  padding: EdgeInsets.all(TSizes.sm),
+                          //featured brand
+                          TSectionHeading(
+                            title: 'Featured Brands',
+                            showActionButton: true,
+                            onPressed: () {},
+                          ),
+                          const SizedBox(
+                            height: TSizes.spaceBtwSections / 1.5,
+                          ),
+                          //
+                          TGidLayout(
+                              itemCount: 4,
+                              mainAxisExtent: 80,
+                              itemBuilder: (_, index) {
+                                return TBrandCard(
                                   showBorder: true,
-                                  backgroundColor: Colors.transparent,
-                                  child: Row(
-                                    children: [
-                                      Flexible(
-                                        child: TCircularImage(
-                                          image: TImages.clothIcon,
-                                          isNetworkImage: false,
-                                          backgroundColor: Colors.transparent,
-                                          overlayColor:
-                                              THelperFunctions.isDarkMode(
-                                                      context)
-                                                  ? TColors.light
-                                                  : TColors.dark,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: TSizes.spaceBtwItems / 2,
-                                      ),
-                                      //text
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            TBrandTitleWithVerifiedIcon(
-                                              title: 'aaa',
-                                              brandTextSize: TextSizes.large,
-                                            ),
-                                            Text(
-                                              '245 san pham',
-                                              overflow: TextOverflow.ellipsis,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .labelMedium,
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              );
-                            })
-                        
-                      ],
+                                  onTap: () {},
+                                );
+                              })
+                        ],
+                      ),
                     ),
+                    bottom: const TTabBar(tabs: [
+                      Tab(
+                        text: 'All',
+                      ),
+                      Tab(
+                        text: 'Clothing',
+                      ),
+                      Tab(
+                        text: 'Electronics',
+                      ),
+                      Tab(
+                        text: 'Accessories',
+                      ),
+                    ]),
                   ),
-                ),
-              ];
-            },
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    // Add your product list or grid here
-                    Text('Product List Goes Here'),
-                  ],
-                ),
+                ];
+              },
+              body: TabBarView(
+                children: [
+                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
+                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
+                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
+                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
+                ],
               ),
             ),
           ),

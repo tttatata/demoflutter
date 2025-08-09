@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -23,21 +24,21 @@ class VerifyEmailScreen extends StatelessWidget {
                   //về trang đăng ký
                   //() => Get.back()
                   /* vê trang đăng nhập  */
-                  () => Get.offAll(() => LoginScreen()),
-              icon: Icon(CupertinoIcons.clear))
+                  () => Get.offAll(() => const LoginScreen()),
+              icon: const Icon(CupertinoIcons.clear))
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsetsGeometry.all(TSizes.defaultSpace),
+          padding: const EdgeInsetsGeometry.all(TSizes.defaultSpace),
           child: Column(
             children: [
               //Image
               Image(
-                image: AssetImage(TImages.deliveredEmailIllustration),
+                image: const AssetImage(TImages.deliveredEmailIllustration),
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               //Title & subtitle
@@ -46,7 +47,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
              Text(
@@ -54,7 +55,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               Text(
@@ -62,7 +63,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               //button
@@ -71,12 +72,12 @@ class VerifyEmailScreen extends StatelessWidget {
                   image: TImages.staticSuccessIllustration,
                   title: TTexts.yourAccountCreatedTitle,
                   subtitle: TTexts.yourAccountCreatedSubTitle,
-                  onPressed: () => Get.to(()=> LoginScreen()),
-                  ),), child: Text(TTexts.tContinue)),
+                  onPressed: () => Get.to(()=> const LoginScreen()),
+                  ),), child: const Text(TTexts.tContinue)),
               ),
-              SizedBox(height: TSizes.spaceBtwItems,),
+              const SizedBox(height: TSizes.spaceBtwItems,),
               SizedBox(
-                width: double.infinity, child: TextButton(onPressed: (){}, child: Text(TTexts.resendEmail)),
+                width: double.infinity, child: TextButton(onPressed: (){}, child: const Text(TTexts.resendEmail)),
               ),
             ],
           ),

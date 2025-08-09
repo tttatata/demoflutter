@@ -8,8 +8,8 @@ enum StoreModelStatus {
 
 class StoreModel extends ChangeNotifier {
   StoreModelStatus _status = StoreModelStatus.Ended;
-  String _errorCode = '';
-  String _errorMessage = '';
+  final String _errorCode = '';
+  final String _errorMessage = '';
 
   String get errorCode => _errorCode;
   String get errorMessage => _errorMessage;

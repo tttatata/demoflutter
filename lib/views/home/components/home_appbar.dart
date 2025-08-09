@@ -3,8 +3,6 @@ import 'package:app/common/widgets/products/cart/cart/cart_menu_icon.dart';
 import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/text_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:provider/provider.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
 

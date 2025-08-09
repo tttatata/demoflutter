@@ -39,7 +39,7 @@ class TVerticalImageText extends StatelessWidget {
                   color: backgroundColor ??
                       (THelperFunctions.isDarkMode(context)
                           ? TColors.black
-                          : Color.fromARGB(255, 102, 133, 236)),
+                          : const Color.fromARGB(255, 102, 133, 236)),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: Center(

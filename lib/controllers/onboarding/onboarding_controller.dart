@@ -30,7 +30,7 @@ void dotNavigationClick(int index) {
 
   //Update Current Index when Page Scroll
   void skipPage() {
-    Get.offAll(const LoginScreen());
+    Get.offAll(() => const LoginScreen());
     // currentPageIndex.value = 2;
     // pageController.jumpToPage(2);
   }

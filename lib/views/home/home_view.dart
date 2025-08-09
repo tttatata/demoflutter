@@ -32,7 +32,7 @@ class HomeView extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  TPrimaryHeaderContainer(
+                  const TPrimaryHeaderContainer(
                     child: Column(
                       children: [
                         //app bar tutorial
@@ -42,23 +42,23 @@ class HomeView extends StatelessWidget {
                         ),
                         //searchbar
                         TSearchContainer(text: "aaa"),
-                        const SizedBox(
+                        SizedBox(
                           height: TSizes.spaceBtwSections / 2,
                         ),
                         Padding(
                           padding:
-                              const EdgeInsets.only(left: TSizes.defaultSpace),
+                              EdgeInsets.only(left: TSizes.defaultSpace),
                           child: Column(
                             children: [
                               TSectionHeading(
                                 title: 'Popular Categories',
                                 showActionButton: false,
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 height: TSizes.spaceBtwItems,
                               ),
                               THomeCategories(),
-                              const SizedBox(
+                              SizedBox(
                                 height: TSizes.spaceBtwSections / 2,
                               ),
 
@@ -70,8 +70,8 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   // body
-                  Padding(
-                    padding: const EdgeInsets.all(TSizes.defaultSpace),
+                  const Padding(
+                    padding: EdgeInsets.all(TSizes.defaultSpace),
                     child: TPromoSlider(
                       banners: [
                         TImages.promoBanner1,
@@ -92,7 +92,7 @@ class HomeView extends StatelessWidget {
                   ),
                   TGidLayout(
                       itemCount: 4,
-                      itemBuilder: (_, index) => TProductCardVertical())
+                      itemBuilder: (_, index) => const TProductCardVertical())
                 ],
               ),
             ),

@@ -44,12 +44,12 @@ class TProductCardVertical extends StatelessWidget {
           children: [
             TRoundedContainer(
               height: 180,
-              padding: EdgeInsets.all(TSizes.sm),
+              padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
                   //Thumbnail
-                  TRoundedImage(
+                  const TRoundedImage(
                     imageUrl: TImages.productsIllustration,
                     applyImageRadius: true,
                   ),
@@ -71,7 +71,7 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   //favorite icon
-                  Positioned(
+                  const Positioned(
                       top: 0,
                       right: 0,
                       child: TCircularIcon(
@@ -87,7 +87,7 @@ class TProductCardVertical extends StatelessWidget {
 
             ///detail
             ///
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: SizedBox(
                 // width: double.infinity,
@@ -114,26 +114,26 @@ class TProductCardVertical extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: TSizes.sm),
+                        const Padding(
+                          padding: EdgeInsets.only(left: TSizes.sm),
                           child: TProductPriceText(
                             price: '350',
                             isLarge: false,
                           ),
                         ),
                         Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: TColors.dark,
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(TSizes.cardRadiusMd),
                                 bottomRight:
                                     Radius.circular(TSizes.productImageRadius)),
                           ),
-                          child: SizedBox(
+                          child: const SizedBox(
                             width: TSizes.iconLg * 1.2,
                             height: TSizes.iconLg * 1.2,
                             child: Center(

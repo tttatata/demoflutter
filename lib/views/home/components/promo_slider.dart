@@ -43,7 +43,7 @@ class TPromoSlider extends StatelessWidget {
               children: [
                 for(int i = 0; i < banners.length; i++)
                   TCircularContainer(
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     width: 20,
                     height: 4,
                     backgroundColor:

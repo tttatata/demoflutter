@@ -73,7 +73,7 @@ class _SignFormState extends State<TLoginForm> {
 
                 ///Forget Password
                 TextButton(
-                  onPressed: () => Get.to(() => ForgetPassword()),
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(TTexts.forgetPassword),
                 )
               ],
@@ -83,7 +83,7 @@ class _SignFormState extends State<TLoginForm> {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () =>Get.to(() => NavigationMenu()),
+                    onPressed: () =>Get.to(() => const NavigationMenu()),
                     child: const Text(TTexts.signIn))),
             const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -92,7 +92,7 @@ class _SignFormState extends State<TLoginForm> {
                 width: double.infinity,
                 child: OutlinedButton(
                     onPressed: () {
-                      Get.to(SignupView());
+                      Get.to(const SignupView());
                       // if (_formKey.currentState!.validate()) {
                       // signUpUser();
                       // if all are valid then go to success screen
