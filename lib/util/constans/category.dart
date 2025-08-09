@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class Categories {
   static const List<Map<String, String>> categoryImages = [

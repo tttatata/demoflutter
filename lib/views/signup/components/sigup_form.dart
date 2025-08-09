@@ -6,6 +6,7 @@ import 'package:app/util/constans/text_strings.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:app/util/validators/validation.dart';
 import 'package:app/views/signup/components/term_conditions_checkox.dart';
+import 'package:app/views/signup/verify_email.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -132,7 +133,7 @@ class _SignUpFormState extends State<TSignUpForm> {
                       prefixIcon: Icon(Iconsax.user)),
                 ),
               ),
-              SizedBox(width: TSizes.spaceBtwItems),
+              const SizedBox(width: TSizes.spaceBtwItems),
               Expanded(
                 child: TextFormField(
                   expands: false,
@@ -201,11 +202,7 @@ class _SignUpFormState extends State<TSignUpForm> {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                // if (_formKey.currentState!.validate()) {
-                //   signUpUser();
-                // }
-              },
+              onPressed: () => Get.to(()=>VerifyEmailScreen()),
               child: const Text(TTexts.createAccount),
             ),
           )

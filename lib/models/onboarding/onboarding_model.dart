@@ -8,8 +8,8 @@ enum OnboardingModelStatus {
 
 class OnboardingModel extends ChangeNotifier {
   OnboardingModelStatus _status;
-  String _errorCode;
-  String _errorMessage;
+  final String _errorCode;
+  final String _errorMessage;
 
   String get errorCode => _errorCode;
   String get errorMessage => _errorMessage;

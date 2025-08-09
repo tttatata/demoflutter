@@ -8,8 +8,8 @@ enum SignupModelStatus {
 
 class SignupModel extends ChangeNotifier {
   SignupModelStatus _status = SignupModelStatus.Ended;
-  String _errorCode = '';
-  String _errorMessage = '';
+  final String _errorCode = '';
+  final String _errorMessage = '';
 
   String get errorCode => _errorCode;
   String get errorMessage => _errorMessage;

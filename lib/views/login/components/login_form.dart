@@ -1,6 +1,8 @@
+import 'package:app/navigation_menu.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/constans/text_strings.dart';
 import 'package:app/util/validators/validation.dart';
+import 'package:app/views/password_configuration/forget_password.dart';
 import 'package:app/views/signup/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,7 +19,7 @@ class TLoginForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<TLoginForm> {
-  Signin _auth = Signin.signin;
+  final Signin _auth = Signin.signin;
   final _formKey = GlobalKey<FormState>();
 
   final TextEditingController _passwordController = TextEditingController();
@@ -39,24 +41,22 @@ class _SignFormState extends State<TLoginForm> {
 
             TextFormField(
               decoration: const InputDecoration(
-                  labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct_right)),
+                  labelText: TTexts.email,
+                  prefixIcon: Icon(Iconsax.direct_right)),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
             //password
-          TextFormField(
-              
-           
-                decoration: InputDecoration(
-                  labelText: TTexts.password,
-                  prefixIcon: const Icon(Iconsax.password_check),
-                  suffixIcon: IconButton(
-                    onPressed: () => hidepassword.value = !hidepassword.value,
-                    icon: Icon(
-                        Iconsax.eye_slash ),
-                  ),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: TTexts.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                  onPressed: () => hidepassword.value = !hidepassword.value,
+                  icon: const Icon(Iconsax.eye_slash),
                 ),
               ),
-          
+            ),
+
             const SizedBox(height: TSizes.spaceBtwInputFields / 2),
 
             ///remember Me & Forget Password
@@ -71,9 +71,9 @@ class _SignFormState extends State<TLoginForm> {
                   ],
                 ),
 
-               ///Forget Password
+                ///Forget Password
                 TextButton(
-                  onPressed: (){},
+                  onPressed: () => Get.to(() => ForgetPassword()),
                   child: const Text(TTexts.forgetPassword),
                 )
               ],
@@ -83,12 +83,7 @@ class _SignFormState extends State<TLoginForm> {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {
-                      // if (_formKey.currentState!.validate()) {
-                      // signInUser();
-                      // if all are valid then go to success screen
-                      // }
-                    },
+                    onPressed: () =>Get.to(() => NavigationMenu()),
                     child: const Text(TTexts.signIn))),
             const SizedBox(height: TSizes.spaceBtwSections),
 
@@ -97,7 +92,7 @@ class _SignFormState extends State<TLoginForm> {
                 width: double.infinity,
                 child: OutlinedButton(
                     onPressed: () {
-                   Get.to(SignupView());
+                      Get.to(SignupView());
                       // if (_formKey.currentState!.validate()) {
                       // signUpUser();
                       // if all are valid then go to success screen

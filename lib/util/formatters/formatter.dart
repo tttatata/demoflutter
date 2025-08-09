@@ -8,8 +8,7 @@ class TFormatter {
   }
 
   static String formatCurrency(double amount) {
-    return NumberFormat.currency(locale: 'vi_VN', symbol: '').format(amount) +
-        ' VNĐ';
+    return '${NumberFormat.currency(locale: 'vi_VN', symbol: '').format(amount)} VNĐ';
   }
 
   static String formatPhoneNumber(String phoneNumber) {

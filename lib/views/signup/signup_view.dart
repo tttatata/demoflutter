@@ -13,6 +13,8 @@ import 'package:app/controllers/signup/signup_controller.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 
 class SignupView extends StatelessWidget {
+  const SignupView({super.key});
+
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
@@ -39,9 +41,9 @@ class SignupView extends StatelessWidget {
                     const SizedBox(height: TSizes.spaceBtwItems),
                     //form
                     const TSignUpForm(),
-
+const SizedBox(height: TSizes.spaceBtwSections),
                     ///divider
-                    TFormDivider(dividerText: TTexts.orSignUpWith),
+                    const TFormDivider(dividerText: TTexts.orSignUpWith),
                     const SizedBox(height: TSizes.spaceBtwSections),
                     //social button
                     const TSocialButtons(),
