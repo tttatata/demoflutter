@@ -1,25 +1,17 @@
-import 'dart:math';
 
 import 'package:app/common/widgets/appbar/appbar.dart';
 import 'package:app/common/widgets/appbar/tabbar.dart';
 import 'package:app/common/widgets/brands/brand_card.dart';
-import 'package:app/common/widgets/brands/brand_show_case.dart';
-import 'package:app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:app/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:app/common/widgets/images/t_circular_image.dart';
 import 'package:app/common/widgets/layouts/grid_layout.dart';
 import 'package:app/common/widgets/products/cart/cart/cart_menu_icon.dart';
 import 'package:app/common/widgets/texts/section_heading.dart';
-import 'package:app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:app/util/constans/colors.dart';
-import 'package:app/util/constans/enums.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:app/views/store/components/category_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 // import model
 import 'package:app/models/store/store_model.dart';
@@ -115,7 +107,7 @@ class StoreView extends StatelessWidget {
                   ),
                 ];
               },
-              body: TabBarView(
+              body: const TabBarView(
                 children: [
                   TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
                   TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),

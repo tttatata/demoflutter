@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/constans/text_strings.dart';
 import 'package:app/util/helpers/helper_functions.dart';

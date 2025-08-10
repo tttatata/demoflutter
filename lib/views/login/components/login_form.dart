@@ -1,7 +1,6 @@
 import 'package:app/navigation_menu.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/constans/text_strings.dart';
-import 'package:app/util/validators/validation.dart';
 import 'package:app/views/password_configuration/forget_password.dart';
 import 'package:app/views/signup/signup_view.dart';
 import 'package:flutter/material.dart';

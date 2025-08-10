@@ -1,12 +1,8 @@
-import 'package:app/common/widgets/custom_shapes/containers/circular_container.dart';
 import 'package:app/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:app/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:app/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
-import 'package:app/common/widgets/custom_shapes/curved_edges/curved_edgges_widget.dart';
 import 'package:app/common/widgets/layouts/grid_layout.dart';
 import 'package:app/common/widgets/product_cards/product_card_vertical.dart';
 import 'package:app/common/widgets/texts/section_heading.dart';
-import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/views/home/components/home_appbar.dart';
@@ -46,8 +42,7 @@ class HomeView extends StatelessWidget {
                           height: TSizes.spaceBtwSections / 2,
                         ),
                         Padding(
-                          padding:
-                              EdgeInsets.only(left: TSizes.defaultSpace),
+                          padding: EdgeInsets.only(left: TSizes.defaultSpace),
                           child: Column(
                             children: [
                               TSectionHeading(
@@ -58,13 +53,13 @@ class HomeView extends StatelessWidget {
                                 height: TSizes.spaceBtwItems,
                               ),
                               THomeCategories(),
-                              SizedBox(
-                                height: TSizes.spaceBtwSections / 2,
-                              ),
 
                               //
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          height: TSizes.spaceBtwSections,
                         ),
                       ],
                     ),

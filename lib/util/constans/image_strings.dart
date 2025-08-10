@@ -50,7 +50,8 @@ class TImages {
   static const String userProfileImage1 = "assets/images/reviews/review_profile_image_1.jpg";
   static const String userProfileImage2 = "assets/images/reviews/review_profile_image_2.jpeg";
   static const String userProfileImage3 = "assets/images/reviews/review_profile_image_3.jpeg";
-
+// user
+  static const String user ="assets/images/content/user.png";
   //Banners
   static const String promoBanner1 = "assets/images/products/promo-banner-1.png";
   static const String promoBanner2 = "assets/images/products/promo-banner-2.png";

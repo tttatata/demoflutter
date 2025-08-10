@@ -3,7 +3,6 @@ import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 
 
@@ -11,7 +10,7 @@ class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
     super.key,
     this.textColor = TColors.white,
-    this.backgroundColor = TColors.white,
+    this.backgroundColor,
     required this.title,
     this.onTap,
     required this.image,

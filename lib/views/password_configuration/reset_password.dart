@@ -3,8 +3,6 @@ import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/constans/text_strings.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});

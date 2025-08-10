@@ -10,8 +10,8 @@ import 'package:app/util/constans/enums.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
+import 'package:app/views/product_detail/product_detail_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -30,7 +30,7 @@ class TProductCardVertical extends StatelessWidget {
     double averageRating = 0; // Khai báo biến ở đây để có thể sử dụng sau này
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.to(()=>  const ProductDetailView()),
       child: Container(
         width: 180,
         // height: 300,
