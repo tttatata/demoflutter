@@ -5,7 +5,10 @@ import 'package:app/common/widgets/list_titles/user_profile_title.dart';
 import 'package:app/common/widgets/texts/section_heading.dart';
 import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/sizes.dart';
+import 'package:app/views/address/address_view.dart';
+import 'package:app/views/oders/oders_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 // import model
@@ -59,14 +62,13 @@ const SizedBox(height: TSizes.spaceBtwSections),
                         TSettingsMenuTitle(
                           icon: Iconsax.safe_home,
                           title: 'Danh sách địa chỉ của bạn',
-                          subTitle: 'Địa chỉ giao hàng để giao hàng',
-                          onTap: () {},
+                          subTitle: 'Địa chỉ giao hàng để giao hàng',onTap: () => Get.to(()=>const AddressView()),
                         ),
                         TSettingsMenuTitle(
-                          icon: Iconsax.safe_home,
-                          title: 'Danh sách địa chỉ của bạn',
+                          icon: Iconsax.bill,
+                          title: 'danh sách đon hàng',
                           subTitle: 'Địa chỉ giao hàng để giao hàng',
-                          onTap: () {},
+                          onTap:  () => Get.to(()=>const OdersView()),
                         ),
                         TSettingsMenuTitle(
                           icon: Iconsax.safe_home,

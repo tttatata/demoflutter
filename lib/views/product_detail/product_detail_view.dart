@@ -1,6 +1,5 @@
 import 'package:app/common/widgets/appbar/appbar.dart';
 import 'package:app/common/widgets/texts/section_heading.dart';
-import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:app/views/product_detail/components/product_attributes.dart';
@@ -8,7 +7,9 @@ import 'package:app/views/product_detail/components/product_detail_image_slider.
 import 'package:app/views/product_detail/components/product_meta_data.dart';
 import 'package:app/views/product_detail/components/rating_share_widget.dart';
 import 'package:app/views/product_detail/components/bottom_add_to_cart.dart';
+import 'package:app/views/product_reviews/product_reviews_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
@@ -36,7 +37,7 @@ class ProductDetailView extends StatelessWidget {
             ),
           ),
           // bottomNavigationBar: TBot,
-      bottomNavigationBar: TBottomAddToCart(),
+      bottomNavigationBar: const TBottomAddToCart(),
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -66,7 +67,14 @@ class ProductDetailView extends StatelessWidget {
                       ),
 
                       //checkout
-                      ElevatedButton(onPressed: () {}, child: Text('Checkout')),
+                      SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Checkout'))),
+                        const SizedBox(
+                        height: TSizes.spaceBtwSections,
+                      ),
 
                       const TSectionHeading(
                         title: 'Mô tả',
@@ -75,7 +83,7 @@ class ProductDetailView extends StatelessWidget {
                       const SizedBox(
                         height: TSizes.spaceBtwItems,
                       ),
-                      ReadMoreText(
+                      const ReadMoreText(
                        'A Flutter plugin that allows for expanding and collapsing text with the added capability to style and interact with specific patterns in the text like hashtags, URLs, and mentions using the new Annotation feature.',
                         trimMode: TrimMode.Line,
                         trimLines: 2,
@@ -101,7 +109,7 @@ class ProductDetailView extends StatelessWidget {
                             showActionButton: false,
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () =>Get.to(()=>const ProductReviewsView()),
                               icon: const Icon(
                                 Iconsax.arrow_right_3,
                                 size: 18,

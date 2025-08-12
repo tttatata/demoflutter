@@ -1,8 +1,10 @@
 
-import 'package:app/common/widgets/products/cart/cart/cart_menu_icon.dart';
+import 'package:app/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/text_strings.dart';
+import 'package:app/views/cart/cart_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/appbar/appbar.dart';
 
@@ -35,7 +37,7 @@ class THomeAppBar extends StatelessWidget {
       ),
       actions: [
         TCartCounterIcon(
-          onPressed: () {},
+          onPressed: () => Get.to(()=>const CartView()),
           iconColor: TColors.white,
         )
       ],

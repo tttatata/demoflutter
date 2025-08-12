@@ -5,10 +5,12 @@ import 'package:app/common/widgets/product_cards/product_card_vertical.dart';
 import 'package:app/common/widgets/texts/section_heading.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
+import 'package:app/views/all_product/all_product_view.dart';
 import 'package:app/views/home/components/home_appbar.dart';
 import 'package:app/views/home/components/home_categories.dart';
 import 'package:app/views/home/components/promo_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 // import model
 import 'package:app/models/home/home_model.dart';
@@ -80,7 +82,7 @@ class HomeView extends StatelessWidget {
                   ),
                   TSectionHeading(
                     title: 'Popular Products',
-                    onPressed: () {},
+                    onPressed: () =>Get.to(()=>const AllProductView()),
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwItems,

@@ -4,14 +4,16 @@ import 'package:app/common/widgets/appbar/tabbar.dart';
 import 'package:app/common/widgets/brands/brand_card.dart';
 import 'package:app/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:app/common/widgets/layouts/grid_layout.dart';
-import 'package:app/common/widgets/products/cart/cart/cart_menu_icon.dart';
+import 'package:app/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:app/common/widgets/texts/section_heading.dart';
 import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
+import 'package:app/views/all_brands/all_brands_view.dart';
 import 'package:app/views/store/components/category_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 // import model
 import 'package:app/models/store/store_model.dart';
@@ -72,7 +74,7 @@ class StoreView extends StatelessWidget {
                           TSectionHeading(
                             title: 'Featured Brands',
                             showActionButton: true,
-                            onPressed: () {},
+                            onPressed: () => Get.to(()=>AllBrandsView()),
                           ),
                           const SizedBox(
                             height: TSizes.spaceBtwSections / 1.5,
