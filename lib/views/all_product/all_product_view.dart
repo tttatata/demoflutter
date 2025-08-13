@@ -21,14 +21,14 @@ class AllProductView extends StatelessWidget {
       create: (context) => AllProductModel.instance(),
       child: Consumer<AllProductModel>(
         builder: (context, viewModel, child) {
-          return Scaffold(
-            appBar: const TAppBar(
+          return const Scaffold(
+            appBar: TAppBar(
               title: Text('Sản phẩm phổ biến'),
               showBackArrow: true,
             ),
             body: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                padding: EdgeInsets.all(TSizes.defaultSpace),
                 child: 
                 TSortableProducts(),
               ),

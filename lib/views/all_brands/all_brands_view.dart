@@ -41,7 +41,7 @@ class AllBrandsView extends StatelessWidget {
                       itemBuilder: (context, index) => 
                     TBrandCard(
                       showBorder: true,
-                      onTap: () => Get.to(() => BrandProducts()),
+                      onTap: () => Get.to(() => const BrandProducts()),
                       ),
                       ),
                       

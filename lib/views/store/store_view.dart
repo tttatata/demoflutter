@@ -74,7 +74,7 @@ class StoreView extends StatelessWidget {
                           TSectionHeading(
                             title: 'Featured Brands',
                             showActionButton: true,
-                            onPressed: () => Get.to(()=>AllBrandsView()),
+                            onPressed: () => Get.to(()=>const AllBrandsView()),
                           ),
                           const SizedBox(
                             height: TSizes.spaceBtwSections / 1.5,
