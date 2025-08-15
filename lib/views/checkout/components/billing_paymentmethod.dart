@@ -8,8 +8,6 @@ import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-
-
 class TBillingPaymentMethodSection extends StatefulWidget {
   const TBillingPaymentMethodSection({
     Key? key,
@@ -41,7 +39,7 @@ class _TBillingPaymentMethodSectionState
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    const paymentMethodselect =true;
+    const paymentMethodselect = true;
     //     Provider.of<UserProvider>(context).selectedPaymentMethod;
 
     return Column(
@@ -62,17 +60,18 @@ class _TBillingPaymentMethodSectionState
               height: 35,
               backgroundColor: dark ? TColors.light : TColors.white,
               padding: const EdgeInsets.all(TSizes.sm),
-              child: const Image(image: AssetImage(TImages.google),fit: BoxFit.contain,),
-            ),const SizedBox(
-                        height: TSizes.spaceBtwItems / 2,
-                      ),
-                 Text('paypal',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge),    
+              child: const Image(
+                image: AssetImage(TImages.paypal),
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+            Text('paypal', style: Theme.of(context).textTheme.bodyLarge),
           ],
         ),
-           
+
         // Column(
         //   children: [
         //     Column(
@@ -95,7 +94,7 @@ class _TBillingPaymentMethodSectionState
         //               ),
         //             ],
         //           )
-               
+
         //   ],
         // ),
       ],

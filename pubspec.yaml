@@ -14,14 +14,27 @@ dependencies:
   get: ^4.6.5
   get_storage: ^2.1.1
   url_launcher: ^6.3.2
-  flutter_native_splash: ^2.4.6
+  flutter_native_splash: ^2.4.4
   smooth_page_indicator: ^1.2.1
   provider: ^6.1.5
   carousel_slider: ^5.1.1
   readmore: ^3.0.0
   flutter_rating_bar: ^4.0.1
-  firebase_core: ^4.0.0
 
+
+  connectivity_plus: ^5.0.1
+  lottie: ^3.0.0
+
+  convert: ^3.1.2
+ 
+  ## -- FIREBASE PACKAGES
+  firebase_auth: ^5.5.3
+  firebase_core: ^3.13.0
+  google_sign_in: ^6.3.0
+  cloud_firestore: ^5.6.7
+  firebase_storage: ^12.4.5
+  firebase_messaging: ^15.2.6
+  firebase_crashlytics: ^4.3.6
 
 dev_dependencies:
   flutter_test:
@@ -31,13 +44,22 @@ flutter:
   uses-material-design: true
   #--------------- LOCAL ASSETS ------------------#
   assets:
-    - assets/logos/
+    - assets/logo/
+    - assets/images/
+    - assets/icons/brands/
+    - assets/images/profile/
+    - assets/images/dashboard/
+    - assets/images/splash_images/
+    - assets/images/welcome_images/
+    - assets/images/forget_password/
     - assets/images/on_boarding_images/
     - assets/images/animations/
-    - assets/icons/categories/
-    - assets/images/products/
-    - assets/images/content/
     - assets/images/banners/
+    - assets/icons/payment_methods/
+    - assets/images/products/
+    - assets/images/brands/
+    - assets/icons/categories/
+    - assets/icons/payment_methods/paypal.png
   #--------------- LOCAL FONTS ------------------#
   fonts:
     - family: Poppins

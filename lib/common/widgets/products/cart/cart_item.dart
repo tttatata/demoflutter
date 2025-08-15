@@ -1,4 +1,3 @@
-
 import 'package:app/common/widgets/images/t_rounded_image.dart';
 import 'package:app/common/widgets/texts/product_title_text.dart';
 import 'package:app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
@@ -7,7 +6,6 @@ import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
 import 'package:app/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-
 
 class TCartItem extends StatefulWidget {
   final int index;
@@ -47,7 +45,7 @@ class _CartProductState extends State<TCartItem> {
       children: [
         TRoundedImage(
           isNetworkImage: false,
-          imageUrl: TImages.google,
+          imageUrl: TImages.productImage1,
           width: 60,
           height: 60,
           padding: const EdgeInsets.all(TSizes.sm),
@@ -69,16 +67,27 @@ class _CartProductState extends State<TCartItem> {
                   smallSize: true,
                 ),
               ),
-              const TBrandTitleWithVerifiedIcon(title: 'product.category.toString()'),
-              const Flexible(child: ProductTitleText(title: 'glass sport shoes',maxLines: 1,)),
-              Text.rich(
-                TextSpan(children: [
-                  TextSpan(text:'color',style: Theme.of(context).textTheme.bodySmall),
-                  TextSpan(text:'color',style: Theme.of(context).textTheme.bodyLarge),
-                  TextSpan(text:'color',style: Theme.of(context).textTheme.bodySmall),
-                  TextSpan(text:'color',style: Theme.of(context).textTheme.bodyLarge),
-                ])
-              ),
+              const TBrandTitleWithVerifiedIcon(
+                  title: 'product.category.toString()'),
+              const Flexible(
+                  child: ProductTitleText(
+                title: 'glass sport shoes',
+                maxLines: 1,
+              )),
+              Text.rich(TextSpan(children: [
+                TextSpan(
+                    text: 'color',
+                    style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(
+                    text: 'color',
+                    style: Theme.of(context).textTheme.bodyLarge),
+                TextSpan(
+                    text: 'color',
+                    style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(
+                    text: 'color',
+                    style: Theme.of(context).textTheme.bodyLarge),
+              ])),
               // TProductPriceText(
               //   price: '222',
               //   isLarge: false,

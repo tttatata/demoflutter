@@ -30,7 +30,7 @@ class TProductCardVertical extends StatelessWidget {
     double averageRating = 0; // Khai báo biến ở đây để có thể sử dụng sau này
 
     return GestureDetector(
-      onTap: () => Get.to(()=>  const ProductDetailView()),
+      onTap: () => Get.to(() => const ProductDetailView()),
       child: Container(
         width: 180,
         // height: 300,
@@ -50,7 +50,7 @@ class TProductCardVertical extends StatelessWidget {
                 children: [
                   //Thumbnail
                   const TRoundedImage(
-                    imageUrl: TImages.productsIllustration,
+                    imageUrl: TImages.productImage22,
                     applyImageRadius: true,
                   ),
                   // sale tag
@@ -109,42 +109,40 @@ class TProductCardVertical extends StatelessWidget {
                         ),
                       ],
                     ),
-                    
                   ],
                 ),
               ),
             ),
             const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(left: TSizes.sm),
-                          child: TProductPriceText(
-                            price: '350',
-                            isLarge: false,
-                          ),
-                        ),
-                        Container(
-                          decoration: const BoxDecoration(
-                            color: TColors.dark,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(TSizes.cardRadiusMd),
-                                bottomRight:
-                                    Radius.circular(TSizes.productImageRadius)),
-                          ),
-                          child: const SizedBox(
-                            width: TSizes.iconLg * 1.2,
-                            height: TSizes.iconLg * 1.2,
-                            child: Center(
-                              child: Icon(Iconsax.add,
-                                  color: TColors.white,
-                                  size: TSizes.iconLg * 1.2),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
+                  child: TProductPriceText(
+                    price: '350',
+                    isLarge: false,
+                  ),
+                ),
+                Container(
+                  decoration: const BoxDecoration(
+                    color: TColors.dark,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(TSizes.cardRadiusMd),
+                        bottomRight:
+                            Radius.circular(TSizes.productImageRadius)),
+                  ),
+                  child: const SizedBox(
+                    width: TSizes.iconLg * 1.2,
+                    height: TSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(Iconsax.add,
+                          color: TColors.white, size: TSizes.iconLg * 1.2),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

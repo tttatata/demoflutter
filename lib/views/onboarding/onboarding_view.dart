@@ -12,8 +12,6 @@ import 'package:app/controllers/onboarding/onboarding_controller.dart';
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(OnBoardingController());
@@ -27,17 +25,17 @@ class OnboardingScreen extends StatelessWidget {
           onPageChanged: controller.updatePageIndicator,
           children: const [
             OnBoardingPage(
-              image: TImages.onBoardingImage1,
+              image: TImages.tOnBoardingImage1,
               title: TTexts.onBoardingTitle1,
               subTitle: TTexts.onBoardingSubTitle1,
             ),
             OnBoardingPage(
-              image: TImages.onBoardingImage2,
+              image: TImages.tOnBoardingImage2,
               title: TTexts.onBoardingTitle2,
               subTitle: TTexts.onBoardingSubTitle2,
             ),
             OnBoardingPage(
-              image: TImages.onBoardingImage3,
+              image: TImages.tOnBoardingImage3,
               title: TTexts.onBoardingTitle3,
               subTitle: TTexts.onBoardingSubTitle3,
             ),

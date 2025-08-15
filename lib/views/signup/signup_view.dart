@@ -21,36 +21,38 @@ class SignupView extends StatelessWidget {
       create: (context) => SignupModel.instance(),
       child: Consumer<SignupModel>(builder: (context, viewModel, child) {
         return Scaffold(
-            appBar: TAppBar(
-              showBackArrow: true,
-              title: Text(
-                'Đăng ký tài khoản',
-                style: Theme.of(context).textTheme.headlineSmall,
+          appBar: TAppBar(
+            showBackArrow: true,
+            title: Text(
+              'Đăng ký tài khoản',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+          ),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //title
+                  Text(TTexts.signupTitle,
+                      style: Theme.of(context).textTheme.headlineMedium),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  //form
+                  const TSignUpForm(),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+
+                  ///divider
+                  const TFormDivider(dividerText: TTexts.orSignUpWith),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  //social button
+                  const TSocialButtons(),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                ],
               ),
             ),
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    //title
-                    Text(TTexts.signupTitle,
-                        style: Theme.of(context).textTheme.headlineMedium),
-                    const SizedBox(height: TSizes.spaceBtwItems),
-                    //form
-                    const TSignUpForm(),
-const SizedBox(height: TSizes.spaceBtwSections),
-                    ///divider
-                    const TFormDivider(dividerText: TTexts.orSignUpWith),
-                    const SizedBox(height: TSizes.spaceBtwSections),
-                    //social button
-                    const TSocialButtons(),
-                    const SizedBox(height: TSizes.spaceBtwSections),
-                  ],
-                ),
-              ),
-            ));
+          ),
+        );
       }),
     );
   }

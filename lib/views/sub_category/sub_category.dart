@@ -42,25 +42,35 @@ class SubCategoriesScreen extends StatelessWidget {
             children: [
               const TRoundedImage(
                 width: double.infinity,
-                
-                imageUrl: TImages.banner1,
+                imageUrl: TImages.tBannerImage1,
                 applyImageRadius: true,
               ),
-              const SizedBox(height: TSizes.spaceBtwSections,),
-           Column(children: [
-            TSectionHeading(title: 'Sport shirt',onPressed: (){},),
-             const SizedBox(height: TSizes.spaceBtwItems / 2 ,),
-             SizedBox(
-              height: 120,
-               child: ListView.separated(
-                itemCount: 4,
-                scrollDirection: Axis.horizontal,
-                separatorBuilder:(context,index) =>const SizedBox(width: TSizes.spaceBtwItems,),
-                itemBuilder: (context,index) => const TProductCardHorizontal(),
-               
-               ),
-             )
-           ],)
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
+              Column(
+                children: [
+                  TSectionHeading(
+                    title: 'Sport shirt',
+                    onPressed: () {},
+                  ),
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems / 2,
+                  ),
+                  SizedBox(
+                    height: 120,
+                    child: ListView.separated(
+                      itemCount: 4,
+                      scrollDirection: Axis.horizontal,
+                      separatorBuilder: (context, index) => const SizedBox(
+                        width: TSizes.spaceBtwItems,
+                      ),
+                      itemBuilder: (context, index) =>
+                          const TProductCardHorizontal(),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),

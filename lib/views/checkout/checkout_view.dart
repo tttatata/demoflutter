@@ -28,102 +28,97 @@ class CheckoutView extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     CheckoutController viewController = CheckoutController();
-    return ChangeNotifierProvider<CheckoutModel>
-    (
-      create: (context) => CheckoutModel.instance(),
-      child: Consumer<CheckoutModel>(
-        builder: (context, viewModel, child)
-         {
+    return ChangeNotifierProvider<CheckoutModel>(
+        create: (context) => CheckoutModel.instance(),
+        child: Consumer<CheckoutModel>(builder: (context, viewModel, child) {
           return Scaffold(
-      appBar: TAppBar(
-        showBackArrow: true,
-        title: Text(
-          'Đặt hàng',
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
-          child: Column(
-            children: [
-              const TCartItems(
-                showAddRemoveButtons: false,
+            appBar: TAppBar(
+              showBackArrow: true,
+              title: Text(
+                'Đặt hàng',
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
-              const SizedBox(height: TSizes.spaceBtwSections),
-
-              ///coupon text file
-              // TCouponCode(onCouponApplied: _applyCoupon), //
-              const SizedBox(height: TSizes.spaceBtwSections),
-              const TCouponCode(),
-              TRoundedContainer(
-                padding: const EdgeInsets.only(
-                  top: TSizes.md,
-                left: TSizes.sm,
-                right: TSizes.sm,
-                bottom: TSizes.md
-                
-                ),
-                showBorder: true,
-                backgroundColor: dark ? TColors.black : TColors.white,
-                child: const Column(
+            ),
+            body: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
                   children: [
-                    TBillingAmountSection(
-                      // onTotalAmountChanged: _updateTotalAmount,
-                      // salelAmount: _saleAmount,
+                    const TCartItems(
+                      showAddRemoveButtons: false,
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: TSizes.spaceBtwSections),
-              TRoundedContainer(
-                padding: const EdgeInsets.all(TSizes.md),
-                showBorder: true,
-                backgroundColor: dark ? TColors.black : TColors.white,
-                child: const Column(
-                  children: [
-                    TBillingAddressSection(),
-                  ],
-                ),
-              ),
-              const SizedBox(height: TSizes.spaceBtwSections),
-              TRoundedContainer(
-                padding: const EdgeInsets.all(TSizes.md),
-                showBorder: true,
-                backgroundColor: dark ? TColors.black : TColors.white,
-                child: const Column(
-                  children: [
-                    TBillingUserSection(),
-                  ],
-                ),
-              ),
-              const SizedBox(height: TSizes.spaceBtwSections),
-              TRoundedContainer(
-                padding: const EdgeInsets.all(TSizes.md),
-                showBorder: true,
-                backgroundColor: dark ? TColors.black : TColors.white,
-                child: const Column(
-                  children: [TBillingPaymentMethodSection()],
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ElevatedButton(
-          onPressed: () => Get.to(()=>SuccesScreen(image: TImages.google, title: 'title', subtitle: 'subtitle', onPressed: () => Get.to(()=>const NavigationMenu()))),
-          child: Text(
-            TFormatter.formatCurrency(211),
-          ),
-        ),
-      ),
-       ); }
-       )
-    );
-        }
-}
+                    const SizedBox(height: TSizes.spaceBtwSections),
 
-          
- 
+                    ///coupon text file
+                    // TCouponCode(onCouponApplied: _applyCoupon), //
+                    const SizedBox(height: TSizes.spaceBtwSections),
+                    const TCouponCode(),
+                    TRoundedContainer(
+                      padding: const EdgeInsets.only(
+                          top: TSizes.md,
+                          left: TSizes.sm,
+                          right: TSizes.sm,
+                          bottom: TSizes.md),
+                      showBorder: true,
+                      backgroundColor: dark ? TColors.black : TColors.white,
+                      child: const Column(
+                        children: [
+                          TBillingAmountSection(
+                              // onTotalAmountChanged: _updateTotalAmount,
+                              // salelAmount: _saleAmount,
+                              ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwSections),
+                    TRoundedContainer(
+                      padding: const EdgeInsets.all(TSizes.md),
+                      showBorder: true,
+                      backgroundColor: dark ? TColors.black : TColors.white,
+                      child: const Column(
+                        children: [
+                          TBillingAddressSection(),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwSections),
+                    TRoundedContainer(
+                      padding: const EdgeInsets.all(TSizes.md),
+                      showBorder: true,
+                      backgroundColor: dark ? TColors.black : TColors.white,
+                      child: const Column(
+                        children: [
+                          TBillingUserSection(),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: TSizes.spaceBtwSections),
+                    TRoundedContainer(
+                      padding: const EdgeInsets.all(TSizes.md),
+                      showBorder: true,
+                      backgroundColor: dark ? TColors.black : TColors.white,
+                      child: const Column(
+                        children: [TBillingPaymentMethodSection()],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            bottomNavigationBar: Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: ElevatedButton(
+                onPressed: () => Get.to(() => SuccesScreen(
+                    image: TImages.successfulPaymentIcon,
+                    title: 'title',
+                    subtitle: 'subtitle',
+                    onPressed: () => Get.to(() => const NavigationMenu()))),
+                child: Text(
+                  TFormatter.formatCurrency(211),
+                ),
+              ),
+            ),
+          );
+        }));
+  }
+}

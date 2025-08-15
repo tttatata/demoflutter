@@ -1,4 +1,3 @@
-
 import 'package:app/common/widgets/appbar/appbar.dart';
 import 'package:app/common/widgets/appbar/tabbar.dart';
 import 'package:app/common/widgets/brands/brand_card.dart';
@@ -74,7 +73,8 @@ class StoreView extends StatelessWidget {
                           TSectionHeading(
                             title: 'Featured Brands',
                             showActionButton: true,
-                            onPressed: () => Get.to(()=>const AllBrandsView()),
+                            onPressed: () =>
+                                Get.to(() => const AllBrandsView()),
                           ),
                           const SizedBox(
                             height: TSizes.spaceBtwSections / 1.5,
@@ -111,10 +111,34 @@ class StoreView extends StatelessWidget {
               },
               body: const TabBarView(
                 children: [
-                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
-                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
-                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
-                  TCategoryTab(images: [TImages.google,TImages.facebook,TImages.google,],),
+                  TCategoryTab(
+                    images: [
+                      TImages.productImage1,
+                      TImages.productImage1,
+                      TImages.productImage1,
+                    ],
+                  ),
+                  TCategoryTab(
+                    images: [
+                      TImages.productImage1,
+                      TImages.productImage1,
+                      TImages.productImage1,
+                    ],
+                  ),
+                  TCategoryTab(
+                    images: [
+                      TImages.productImage1,
+                      TImages.productImage1,
+                      TImages.productImage1,
+                    ],
+                  ),
+                  TCategoryTab(
+                    images: [
+                      TImages.productImage1,
+                      TImages.productImage1,
+                      TImages.productImage1,
+                    ],
+                  ),
                 ],
               ),
             ),

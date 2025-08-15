@@ -1,4 +1,5 @@
 import 'package:app/views/login/login_view.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -19,6 +20,10 @@ void dotNavigationClick(int index) {
   void nextPage() {
     if (currentPageIndex.value == 2) {
       final storage = GetStorage();
+      if(kDebugMode){
+      print('======================================gget storage btuuon=========================');
+      print(storage.read('IsFirstTime'));
+    }
       storage.write('IsFirstTime', false);
 
       Get.offAll(const LoginScreen());
@@ -30,6 +35,12 @@ void dotNavigationClick(int index) {
 
   //Update Current Index when Page Scroll
   void skipPage() {
+     final storage = GetStorage();
+     if(kDebugMode){
+      print('======================================gget storage btuuon======================');
+      print(storage.read('IsFirstTime'));
+    }
+      storage.write('IsFirstTime', false);
     Get.offAll(() => const LoginScreen());
     // currentPageIndex.value = 2;
     // pageController.jumpToPage(2);

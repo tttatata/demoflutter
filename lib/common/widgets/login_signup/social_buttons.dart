@@ -1,4 +1,3 @@
-
 import 'package:app/util/constans/colors.dart';
 import 'package:app/util/constans/image_strings.dart';
 import 'package:app/util/constans/sizes.dart';
@@ -23,7 +22,7 @@ class TSocialButtons extends StatelessWidget {
             icon: const Image(
               width: TSizes.iconMd,
               height: TSizes.iconMd,
-              image: AssetImage(TImages.google),
+              image: AssetImage(TImages.googlePay),
             ),
           ),
         ),
@@ -37,7 +36,7 @@ class TSocialButtons extends StatelessWidget {
             icon: const Image(
               width: TSizes.iconMd,
               height: TSizes.iconMd,
-              image: AssetImage(TImages.facebook),
+              image: AssetImage(TImages.tFacebookLogo),
             ),
           ),
         ),

@@ -11,19 +11,14 @@ import 'package:app/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-
-
 class TProductImageSlider extends StatelessWidget {
   const TProductImageSlider({
     Key? key,
-    
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
     final darkMode = THelperFunctions.isDarkMode(context);
-  
 
     // bool isFavorite = user.wishList!.any((item) =>
     //     item['product']['_id'].toString() == widget.product.id.toString());
@@ -43,7 +38,8 @@ class TProductImageSlider extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(TSizes.productImageRadius * 2),
                     child: Center(
-                      child: Image(image: AssetImage(TImages.onBoardingImage2)),
+                      child:
+                          Image(image: AssetImage(TImages.tOnBoardingImage1)),
                     ),
                   ),
                 );
@@ -69,7 +65,6 @@ class TProductImageSlider extends StatelessWidget {
                     return GestureDetector(
                       onTap: () {
                         // Cập nhật _currentImageUrl khi một hình ảnh nhỏ được nhấn
-                       
                       },
                       child: TRoundedImage(
                         width: 80,
@@ -78,7 +73,7 @@ class TProductImageSlider extends StatelessWidget {
                         border: Border.all(color: TColors.primary),
                         padding: const EdgeInsets.all(TSizes.sm),
                         isNetworkImage: false,
-                        imageUrl: TImages.google,
+                        imageUrl: TImages.tGoogleLogo,
                       ),
                     );
                   },
@@ -91,9 +86,9 @@ class TProductImageSlider extends StatelessWidget {
                 Builder(
                   builder: (BuildContext context) {
                     return TCircularIcon(
-                      onPressed: (){},
+                      onPressed: () {},
                       icon: Iconsax.heart5,
-                      color:  Colors.pink ,
+                      color: Colors.pink,
                     );
                   },
                 ),

@@ -1,4 +1,3 @@
-
 import 'package:app/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:app/common/widgets/icons/t_circular_icon.dart';
 import 'package:app/common/widgets/images/t_rounded_image.dart';
@@ -47,7 +46,7 @@ class TProductCardHorizontal extends StatelessWidget {
                 width: 120,
                 child: TRoundedImage(
                   // fit: BoxFit.contain,
-                  imageUrl: TImages.product1,
+                  imageUrl: TImages.productImage65,
                   applyImageRadius: true,
                 ),
               ),
